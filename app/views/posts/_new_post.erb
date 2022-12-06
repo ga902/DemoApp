@@ -1,0 +1,13 @@
+<%# <div class="container"> %>
+  <div class="col-md-12">
+    <%= form_with(model: @post, local: true) do |f| %>
+       <div class="col-md-12">
+        <%f.label :context %>
+        <%= f.text_area(:context, rows: 4, data: {provide: "markdown"})%>
+      </div>
+      <div class="col-md-12">
+        <%=f.submit "createPost!",class:'btn btn-primary'%>
+      </div>
+      <%end%>
+  </div>
+<%# </div> %>

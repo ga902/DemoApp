@@ -1,0 +1,7 @@
+<%= form_with(model: @comment, local: true) do |f| %>
+  <%f.label :body %>
+    <%= f.text_area(:body, rows: 1, data: {provide: "markdown"})%>
+    <%= f.hidden_field :user_id, required: true, class: 'form-control', value:@id  %>
+    <%= f.hidden_field :post_id, required: true, class: 'form-control', value:@post_id  %>
+  <%=f.submit "comment!",class:'btn btn-primary'%>
+<%end%>

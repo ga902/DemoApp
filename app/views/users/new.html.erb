@@ -1,0 +1,28 @@
+<h1>Sing up Form!</h1>
+<%= render 'error_msg', object: @user %>
+<div class="container">
+  <div class="row">
+    <%= form_with(model: @user, local: true) do |f|%>
+      <div class="col-md-12">
+        <%= f.label :name %>
+        <%= f.text_field :name ,class: 'form-control' %>
+      </div>
+      <div class="col-md-12">
+        <%= f.label :email %>
+        <%= f.email_field :email ,class: 'form-control' %>
+      </div>
+      <div class="col-md-12">
+        <%= f.label :password %>
+        <%= f.password_field :password ,class: 'form-control'%>
+      </div>
+      <div class="col-md-12">
+        <%= f.label :confirm_password %>
+        <%= f.password_field :confirm_password ,class: 'form-control'%>
+      </div>
+      <div class="col-md-12">
+        <%= f.submit "sign up!" , class: "btn btn-primary" %>
+        <%= link_to 'Already have an account Login please!', login_path %>
+      </div>
+    <% end %>
+  </div>
+</div>

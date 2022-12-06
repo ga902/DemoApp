@@ -1,0 +1,39 @@
+<h1>Welcome User</h1>
+<%# <% flash.any? %>
+<%# < %= render " users/flash_msg" %>
+<%# < % end %>  
+<div class="container">
+     <div class="col-md-6 col-md-3-offset"> 
+        <div class="post_div">
+          <% @posts.each do|post| %>
+            <div class="col-md-12">
+              <div class="post_container">
+                <div class="media">
+                <div class="media-body">
+                  <h4 class="media-heading"><%= @user.name%><small><i>Posted on <%=@user.created_at.strftime("%Y-%m-%d")%></i></small></h4>
+                  <p><%=post.context%></p>
+                    <div class="comments">
+                      <%= post.comment.each do|comments|%>
+                      <div class="media">
+                        <div class="media-body">
+                          <h4 class="media-heading"><%=comments_name(comments) %><small><i>Commented on <%=comments.created_at.strftime("%Y-%m-%d")%></i></small></h4>
+                                <div class="col-md-12">
+                                <% if comments.body %>
+                                <%=comments.body%>
+                                <% end %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%> 
+                  </div>
+                </div>
+              </div>
+              </div>
+              <%= link_to 'View Post',post_path(post)%>
+            </div>
+          <% end %>  
+        </div>
+         
+    </div>
+  </div>
+      

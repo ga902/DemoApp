@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="title">
+    <h1>All User</h1>
+  </div>
+   <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>View Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do|user|%>
+        <tr>
+          <td>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+          <td>
+            <%= link_to "Visit User!",user_path(user) %>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+</div>
